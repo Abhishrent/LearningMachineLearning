@@ -158,15 +158,15 @@ In ML we use different cost functions for different applications. This squared e
 
 ### In conclusion
 We have,  
-$$f_{w,b}(x^{(i)}) = \hat{y}^{(i)}$$
+$$f_{w,b}(x^{(i)}) = \hat{y}^{(i)}$$  
 
-$$f_{w,b}(x^{(i)}) = wx^{(i)} + b$$
+$$f_{w,b}(x^{(i)}) = wx^{(i)} + b$$  
 
 Squared Error Cost Function:  
-$$J(w,b) = \frac{1}{2m} \sum_{i=1}^m (\hat{y}^{(i)} - y^{(i)})^2$$
+$$J(w,b) = \frac{1}{2m} \sum_{i=1}^m (\hat{y}^{(i)} - y^{(i)})^2$$  
 
 Can be rewritten as:  
-$$J(w,b) = \frac{1}{2m} \sum_{i=1}^m (f_{w,b}(x^{(i)}) - y^{(i)})^2$$
+$$J(w,b) = \frac{1}{2m} \sum_{i=1}^m (f_{w,b}(x^{(i)}) - y^{(i)})^2$$  
 
 **Note: $\hat{y}$ (the prediction of y) lies in the fitted line while the actual y may not.**  
 
