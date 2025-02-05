@@ -97,7 +97,7 @@ graph TD
 
 
 
-```mermaid'
+```mermaid
 flowchart LR
 	X(x)
 	-->F[Function]
