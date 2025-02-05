@@ -45,8 +45,6 @@ Clustering|Group similar data points together
 Anomaly Detection| Detect unusual data points (for example: Financial system fraud detection, the unusual data point being an unusual transaction)
 Dimensionality Reduction|Compress data using fewer numbers
 
-# Jupyter Notebooks
-
 
 ## Linear Regression Model
 Fitting a straight line to your data  
@@ -90,11 +88,11 @@ m = 47
 
 
 ```mermaid
-flowchart TD
-	L[Learning Model]
-	T[Training Set]
-	F[Function]
-	T-->L--->F
+graph TD
+    L[Learning Model]
+    T[Training Set]
+    F[Function]
+    T --> L --> F
 ```
 
 
@@ -136,7 +134,44 @@ The red line represents the function f(x).
 Univariate linear regression = Lnear model with one input variable  
 
 ## Cost Function
+Tells us how well the model is doing.  
 
+**What do w and b do?**  
+w is the slope and b is the y-intercept. They determine the function f.  
+
+**The goal** is to find the values for w and b so that 
+$$\hat{y}^{(i)} \text{ is close to } y^{(i)} \text{ for all } (x^{(i)},y^{(i)})$$
+
+
+**The cost function takes the prediction $\hat{y}$ and compares it to the target y by taking $\hat{y}$ - y, called error, raised to it's square for different training examples i in the training set and sums it up to measure the error across the entire training set from i = 1 all the way upto m where m is the number of training examples.** 
+
+$$\sum_{i=1}^m (\hat{y}^{(i)} - y^{(i)})^2$$
+
+At this stage the cost function will calculate a bigger number as your training examples increase.  
+
+We compute the average squared error instead of the total squared error in order to prevent this by dividing it by m. By convention we also multiply the m by 2 to make the calculations more neat. The cost function works however though.  
+
+
+$$J(w,b) = \frac{1}{2m} \sum_{i=1}^m (\hat{y}^{(i)} - y^{(i)})^2$$
+
+In ML we use different cost functions for different applications. This squared error cost function is by far the most used one for linear regression.  
+
+### In conclusion
+We have,  
+$$f_{w,b}(x^{(i)}) = \hat{y}^{(i)}$$
+
+$$f_{w,b}(x^{(i)}) = wx^{(i)} + b$$
+
+Squared Error Cost Function:  
+$$J(w,b) = \frac{1}{2m} \sum_{i=1}^m (\hat{y}^{(i)} - y^{(i)})^2$$
+
+Can be rewritten as:  
+$$J(w,b) = \frac{1}{2m} \sum_{i=1}^m (f_{w,b}(x^{(i)}) - y^{(i)})^2$$
+
+**Note: $\hat{y}$ (the prediction of y) lies in the fitted line while the actual y may not.**  
+
+
+ 
 
 
 
