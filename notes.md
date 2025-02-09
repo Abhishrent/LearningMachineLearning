@@ -116,9 +116,9 @@ The function takes in an input x and produces an estimate or prediction for y, r
 
  Consider f is a straight line, then f can be represented as,      
 
- **f<sub>w,b</sub>(x) = wx + b**
+$$f_{w,b}(x) = wx + b$$
 
- or, **f(x) = wx + b** simply.
+ or, $$f(x) = wx + b$$ simply.
 
  where, f is a function that takes x as input and outputs some value of a prediction $\hat{y}$, depending on the values of the parameters w and b.
 
@@ -127,14 +127,16 @@ The function takes in an input x and produces an estimate or prediction for y, r
    
 ![regressionline](images/regressionLine)
 
-The red line represents the function f(x).
+The red line represents the function $f(x)$ that outputs an **estimation of $y$** (i.e $\hat{y}$).  
+
+$$f_{w,b}(x^{(i)}) = wx^{(i)} + b = \hat{y}^{(i)}$$ 
 
 **We may also fit a non linear function such as a curve or a parbola as per need and the representation of the function changes accordingly.**  
 
 Univariate linear regression = Lnear model with one input variable  
 
 ## Cost Function
-Tells us how well the model is doing.  
+Tells us how well the model is doing.  It measures how well the values of the parameters fit the training data.  
 
 **What do w and b do?**  
 w is the slope and b is the y-intercept. They determine the function f.  
@@ -158,17 +160,54 @@ In ML we use different cost functions for different applications. This squared e
 
 ### In conclusion
 We have,  
-$$f_{w,b}(x^{(i)}) = \hat{y}^{(i)}$$  
 
-$$f_{w,b}(x^{(i)}) = wx^{(i)} + b$$  
-
-Squared Error Cost Function:  
+**Squared Error Cost Function:**  
 $$J(w,b) = \frac{1}{2m} \sum_{i=1}^m (\hat{y}^{(i)} - y^{(i)})^2$$  
 
 Can be rewritten as:  
 $$J(w,b) = \frac{1}{2m} \sum_{i=1}^m (f_{w,b}(x^{(i)}) - y^{(i)})^2$$  
 
 **Note: $\hat{y}$ (the prediction of y) lies in the fitted line while the actual y may not.**  
+
+## The intuition behind the cost function
+
+The goal of linear regression is to find the values for parameters that result in the smallest possible value of the cost function J.  
+
+We've got the model: $$f_{w,b}(x) = wx + b$$
+
+And the corresponding cost function:
+
+$$J(w,b) = \frac{1}{2m} \sum_{i=1}^m (f_{w,b}(x^{(i)}) - y^{(i)})^2$$  
+
+The goal is to make $$J(w,b)$$ as small as possible, mathematically denoted as:
+
+$$minimize\ J(w,b) \\w,b$$
+
+But in order better visualize things, let us simplify the model by getting rid of the paramter b altogether so that we only have to deal with a single parameter w.  
+
+**The simplification gives us the following:**
+
+The model: 
+
+$$f_w(x) = wx$$
+
+The corresponding cost function: 
+$$J(w) = \frac{1}{2m} \sum_{i=1}^m (f_{w}(x^{(i)}) - y^{(i)})^2$$  
+
+The goal:
+$$minimize\ J(w)$$
+
+
+Suppose w = 0, 
+
+That plots out the following regression line  
+
+![]()
+
+
+
+
+
 
 
  
